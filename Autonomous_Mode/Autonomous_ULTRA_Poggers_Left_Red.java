@@ -1,3 +1,5 @@
+// Versão de rotas: esquerda da aliança vermelha
+
 package org.firstinspires.ftc.teamcode.Autonomous_Mode;
 
 import android.util.Size;
