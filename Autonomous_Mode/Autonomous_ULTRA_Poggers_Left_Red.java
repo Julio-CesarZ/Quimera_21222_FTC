@@ -37,7 +37,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
     private boolean april4 = false;
     private boolean april5 = false;
     private boolean april6 = false;
-    int sair = 2;
+    int sair = 3;
     private static final boolean USE_WEBCAM = true;
 
     private static final String TFOD_MODEL_ASSET = "CenterStage.tflite";
@@ -141,33 +141,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
                     telemetry.addData(teamSupportPosition, " Detectado");
                     telemetry.update();
 
-                    servo_porta("fechar");
-                    servo_porta("abrir");
-                    walk("front", 40, 0.5);
-                    walk("spinleft",480,0.5);
-                    walk("front", 25, 0.5);
-                    walk("back", 23, 0.5);
-                    walk("spinright",480,0.5);
-                    s0.setPosition(0.35);
-                    walk("front", 88, 1);
-                    walk("spinleft",1020,1);
-                    walk("back", 195, 1);
-                    walk("spinright",2000,0.5);
-                    garra("baixo", 400, 0.3);
-                    servo_porta("fechar");
-                    walk("right", 62, 0.5);
-                    walk("front", 10, 1);
-                    sleep(1000);
-                    leitura_x(4);
-                    servo_garra("backdrop");
-                    garra("cima", 100, 0.3);
-                    walk("front", 25, 0.5);
-                    servo_pixel("soltar");
-                    garra("cima", 70, 0.3);
-                    walk("back", 12, 1);
-                    walk("spinright",2000,0.5);
-                    walk("back", 10, 1);
-                    servo_porta("abrir");
+                    esquerda();
 
                     break;
 
@@ -175,31 +149,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
                     telemetry.addData(teamSupportPosition, " Detectado");
                     telemetry.update();
 
-                    servo_porta("fechar");
-                    servo_porta("abrir");
-                    walk("front", 70, 0.5);
-                    walk("back", 20, 0.5);
-                    walk("left", 50, 0.5);
-                    s0.setPosition(0.35);
-                    walk("front", 88, 1);
-                    walk("spinleft",1020,1);
-                    walk("back", 250, 1);
-                    walk("spinright",1960,0.5);
-                    garra("baixo", 400, 0.5);
-                    servo_porta("fechar");
-                    walk("right", 68, 1);
-                    walk("front", 10, 1);
-                    sleep(1000);
-                    leitura_x(5);
-                    servo_garra("backdrop");
-                    garra("cima", 100, 0.3);
-                    walk("front", 15, 0.5);
-                    servo_pixel("soltar");
-                    garra("cima", 70, 0.3);
-                    walk("back", 12, 1);
-                    walk("spinright",2000,1);
-                    walk("back", 10, 1);
-                    servo_porta("abrir");
+                    meio();
 
                     break;
 
@@ -207,33 +157,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
                     telemetry.addData(teamSupportPosition, " Detectado");
                     telemetry.update();
 
-                    servo_porta("fechar");
-                    servo_porta("abrir");
-                    walk("front", 40, 0.5);
-                    walk("spinright",480,0.5);
-                    walk("front", 25, 0.5);
-                    walk("back", 23, 0.5);
-                    walk("spinleft",480,0.5);
-                    s0.setPosition(0.35);
-                    walk("front", 88, 1);
-                    walk("spinleft",1020,1);
-                    walk("back", 195, 1);
-                    walk("spinright",2000,0.5);
-                    garra("baixo", 400, 0.3);
-                    servo_porta("fechar");
-                    walk("right", 72, 0.5);
-                    walk("front", 10, 1);
-                    sleep(1000);
-                    leitura_x(6);
-                    servo_garra("backdrop");
-                    garra("cima", 100, 0.3);
-                    walk("front", 25, 0.5);
-                    servo_pixel("soltar");
-                    garra("cima", 70, 0.3);
-                    walk("back", 12, 1);
-                    walk("spinright",2000,0.5);
-                    walk("back", 10, 1);
-                    servo_porta("abrir");
+                    direita();
 
                     break;
 
@@ -242,35 +166,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
                 telemetry.addData(teamSupportPosition, "Detectado");
                 telemetry.update();
 
-                servo_porta("fechar");
-                servo_porta("abrir");
-                walk("front", 40, 0.5);
-                walk("spinleft", 480, 0.5);
-                walk("front", 25, 0.5);
-                walk("back", 25, 0.5);
-                walk("spinleft", 520, 0.5);
-                walk("left", 18, 0.5);
-                garra("baixo", 300, 0.5);
-                servo_porta("fechar");
-                walk("front", 80, 0.5);
-                walk("right", 20, 0.5);
-                walk("front", 15, 0.5);
-                sleep(1000);
-                leitura_x(1);
-                walk("front", 10, 0.5);
-                walk("left", 2, 0.5);
-                servo_garra("backdrop");
-                garra("cima", 70, 0.3);
-                walk("front", 2, 0.1);
-                servo_pixel("soltar");
-                garra("cima", 70, 0.3);
-                garra("baixo", 70, 0.7);
-                walk("back", 2, 0.1);
-                garra("baixo", 20, 0.2);
-                walk("back", 10, 1);
-                walk("spinright", 2000, 0.5);
-                walk("back", 10, 0.3);
-                servo_porta("abrir");
+                esquerda();
 
                 break;
 
@@ -279,6 +175,87 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
         }
     }
 
+    public void esquerda() {
+        servo_porta("fechar");
+        servo_porta("abrir");
+        walk("front", 43, 0.5);
+        walk("spinleft",520,0.5);
+        walk("front", 20, 0.5);
+        walk("back", 18, 0.5);
+        walk("spinright",480,0.5);
+        s0.setPosition(0.35);
+        walk("front", 85, 1);
+        walk("spinleft",1020,1);
+        walk("back", 192, 1);
+        walk("spinright",1950,0.5);
+        garra("baixo", 400, 0.3);
+        servo_porta("fechar");
+        walk("right", 60, 0.5);
+        walk("front", 15, 0.6);
+        sleep(1000);
+        leitura_x(4);
+        servo_garra("backdrop");
+        garra("cima", 100, 0.3);
+        walk("front", 25, 0.5);
+        servo_pixel("soltar");
+        garra("cima", 70, 0.3);
+        walk("back", 12, 1);
+        walk("spinright",2000,0.5);
+        walk("back", 10, 1);
+        servo_porta("abrir");
+    }
+    public void meio() {
+        servo_porta("fechar");
+        servo_porta("abrir");
+        walk("front", 70, 0.5);
+        walk("back", 20, 0.5);
+        walk("left", 50, 0.5);
+        s0.setPosition(0.35);
+        walk("front", 88, 1);
+        walk("spinleft",1060,1);
+        walk("back", 230, 1);
+        walk("spinright",2020,0.5);
+        garra("baixo", 400, 0.5);
+        servo_porta("fechar");
+        walk("right", 98, 0.5);
+        walk("front", 15, 1);
+        servo_garra("backdrop");
+        walk("front", 40, 0.5);
+        garra("cima", 70, 0.3);
+        servo_pixel("soltar");
+        walk("back", 12, 1);
+        walk("spinright",2000,1);
+        walk("back", 10, 1);
+        servo_porta("abrir");
+    }
+    public void direita() {
+        servo_porta("fechar");
+        servo_porta("abrir");
+        walk("front", 40, 0.5);
+        walk("spinright",480,0.5);
+        walk("front", 25, 0.5);
+        walk("back", 23, 0.5);
+        walk("spinleft",520,0.5);
+        s0.setPosition(0.35);
+        walk("front", 88, 1);
+        walk("spinleft",1020,1);
+        walk("back", 185, 1);
+        walk("spinright",1920,0.5);
+        garra("baixo", 400, 0.3);
+        servo_porta("fechar");
+        walk("right", 102, 0.5);
+        walk("front", 15, 1);
+        sleep(1000);
+        leitura_x(6);
+        servo_garra("backdrop");
+        walk("front", 35, 0.5);
+        garra("cima", 70, 0.3);
+        servo_pixel("soltar");
+        walk("back", 12, 1);
+        walk("spinright",2000,0.5);
+        walk("back", 10, 1);
+        servo_porta("abrir");
+    }
     public void leitura_x(int x){
         while (sair >= 1) {
 
@@ -291,19 +268,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
 
                 for (AprilTagDetection detection : detections) {
                     if (detection.id == x) {
-                        if (detection.ftcPose.x >= -2.2) {
-                            while (detection.ftcPose.x >= -2.2) {
-                                walk("right", 10, 0.3);
-                                detections = aprilTag.getDetections();
-                                for (AprilTagDetection updatedDetection : detections) {
-                                    if (updatedDetection.id == x) {
-                                        detection = updatedDetection;
-                                        break;
-                                    }
-                                }
-                            }
-
-                        } else if (detection.ftcPose.x <= -2.2) {
+                        if (detection.ftcPose.x <= -2.2) {
                             while (detection.ftcPose.x <= -2.2) {
                                 walk("left", 10, 0.3);
                                 detections = aprilTag.getDetections();
@@ -317,13 +282,13 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
 
                         }
                     } else {
-                        walk("left", 10, 0.5);
-                        sleep(500);
+                        walk("left", 8, 0.5);
+                        sleep(1000);
                     }
                 }
             } else {
-                walk("left", 10, 0.5);
-                sleep(500);
+                walk("left", 8, 0.5);
+                sleep(1000);
             }
 
         }

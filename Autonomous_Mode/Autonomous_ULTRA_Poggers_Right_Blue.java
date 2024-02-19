@@ -139,110 +139,21 @@ public class Autonomous_ULTRA_Poggers_Right_Blue extends LinearOpMode {
                     telemetry.addData(teamSupportPosition, " Detectado");
                     telemetry.update();
 
-                    servo_porta("fechar");
-                    servo_porta("abrir");
-                    walk("front", 40, 0.5);
-                    walk("spinleft", 480, 0.5);
-                    walk("front", 25, 0.5);
-                    walk("back", 25, 0.5);
-                    walk("spinleft", 520, 0.5);
-                    walk("left", 18, 0.5);
-                    garra("baixo", 300, 0.5);
-                    servo_porta("fechar");
-                    walk("front", 80, 0.5);
-                    walk("right", 20, 0.5);
-                    walk("front", 15, 0.5);
-                    sleep(1000);
-                    leitura_x(1);
-                    walk("front", 10, 0.5);
-                    walk("left", 2, 0.5);
-                    servo_garra("backdrop");
-                    garra("cima", 70, 0.3);
-                    walk("front", 2, 0.1);
-                    servo_pixel("soltar");
-                    garra("cima", 70, 0.3);
-                    garra("baixo", 70, 0.7);
-                    walk("back", 2, 0.1);
-                    garra("baixo", 20, 0.2);
-                    walk("back", 10, 1);
-                    walk("spinright", 2000, 0.5);
-                    walk("back", 10, 0.3);
-                    servo_porta("abrir");
-                    walk("right", 100, 1);
-                    walk("back", 30, 0.5);
-
+                    esquerda();
                     break;
 
                 } else if (teamSupportPosition.equals("meio")) {
                     telemetry.addData(teamSupportPosition, " Detectado");
                     telemetry.update();
 
-                    servo_porta("fechar");
-                    servo_porta("abrir");
-                    walk("front", 70, 0.5);
-                    walk("back", 15, 0.5);
-                    walk("spinleft", 1000, 0.5);
-                    garra("baixo", 300, 0.5);
-                    servo_porta("fechar");
-                    walk("front", 80, 0.5);
-                    walk("right", 10, 0.5);
-                    walk("front", 15, 0.5);
-                    sleep(1000);
-                    leitura_x(2);
-                    walk("front", 10, 0.5);
-                    walk("left", 2, 0.5);
-                    servo_garra("backdrop");
-                    garra("cima", 70, 0.3);
-                    walk("front", 2, 0.1);
-                    servo_pixel("soltar");
-                    garra("cima", 70, 0.3);
-                    garra("baixo", 70, 0.7);
-                    walk("back", 2, 0.1);
-                    garra("baixo", 20, 0.2);
-                    walk("back", 10, 1);
-                    walk("spinright", 2000, 0.5);
-                    walk("back", 10, 0.3);
-                    servo_porta("abrir");
-                    walk("right", 80, 1);
-                    walk("back", 30, 0.5);
-
+                    meio();
                     break;
 
                 } else if (teamSupportPosition.equals("direita")) {
                     telemetry.addData(teamSupportPosition, " Detectado");
                     telemetry.update();
 
-                    servo_porta("fechar");
-                    servo_porta("abrir");
-                    walk("front", 40, 0.5);
-                    walk("spinright", 480, 0.5);
-                    walk("front", 25, 0.5);
-                    walk("back", 25, 0.5);
-                    walk("spinleft", 1440, 0.5);
-                    walk("left", 10, 0.5);
-                    garra("baixo", 300, 0.5);
-                    servo_porta("fechar");
-                    walk("front", 80, 0.5);
-                    walk("right", 20, 0.5);
-                    walk("front", 15, 0.5);
-                    sleep(1000);
-                    leitura_x(3);
-                    walk("front", 10, 0.5);
-                    servo_garra("backdrop");
-                    garra("cima", 70, 0.3);
-                    walk("front", 2, 0.1);
-                    servo_pixel("soltar");
-                    garra("cima", 70, 0.3);
-                    garra("baixo", 70, 0.7);
-                    walk("back", 2, 0.1);
-                    garra("baixo", 20, 0.2);
-                    walk("back", 10, 1);
-                    walk("spinright", 2000, 0.5);
-                    walk("back", 10, 0.3);
-                    servo_porta("abrir");
-                    walk("right", 60, 1);
-                    walk("back", 30, 0.5);
-
+                    direita();
                     break;
 
                 } else {
@@ -253,42 +164,84 @@ public class Autonomous_ULTRA_Poggers_Right_Blue extends LinearOpMode {
                 telemetry.addData(teamSupportPosition, "Detectado");
                 telemetry.update();
 
-                servo_porta("fechar");
-                servo_porta("abrir");
-                walk("front", 40, 0.5);
-                walk("spinleft", 480, 0.5);
-                walk("front", 25, 0.5);
-                walk("back", 25, 0.5);
-                walk("spinleft", 520, 0.5);
-                walk("left", 18, 0.5);
-                garra("baixo", 300, 0.5);
-                servo_porta("fechar");
-                walk("front", 80, 0.5);
-                walk("right", 20, 0.5);
-                walk("front", 15, 0.5);
-                sleep(1000);
-                leitura_x(1);
-                walk("front", 10, 0.5);
-                walk("left", 2, 0.5);
-                servo_garra("backdrop");
-                garra("cima", 70, 0.3);
-                walk("front", 2, 0.1);
-                servo_pixel("soltar");
-                garra("cima", 70, 0.3);
-                garra("baixo", 70, 0.7);
-                walk("back", 2, 0.1);
-                garra("baixo", 20, 0.2);
-                walk("back", 10, 1);
-                walk("spinright", 2000, 0.5);
-                walk("back", 10, 0.3);
-                servo_porta("abrir");
-
+                esquerda();
                 break;
 
             }
         }
     }
 
+    public void esquerda() {
+        servo_porta("fechar");
+        servo_porta("abrir");
+        walk("front", 40, 0.5);
+        walk("spinleft", 480, 0.5);
+        walk("front", 25, 0.5);
+        walk("back", 25, 0.5);
+        walk("spinleft", 540, 0.5);
+        walk("left", 18, 0.5);
+        garra("baixo", 300, 0.5);
+        servo_porta("fechar");
+        walk("front", 80, 0.5);
+        walk("right", 18, 0.5);
+        walk("front", 25,0.5);
+        servo_garra("backdrop");
+        garra("cima", 70, 0.3);
+        servo_pixel("soltar");
+        walk("back", 20, 0.8);
+        walk("spinright", 1920, 0.5);
+        servo_porta("abrir");
+        walk("right", 38, 0.5);
+        walk("back", 30, 0.5);
+    }
+    public void meio() {
+        servo_porta("fechar");
+        servo_porta("abrir");
+        walk("front", 70, 0.5);
+        walk("back", 15, 0.5);
+        walk("spinleft", 1000, 0.5);
+        garra("baixo", 300, 0.5);
+        servo_porta("fechar");
+        walk("front", 80, 0.5);
+        walk("right", 10, 0.5);
+        walk("front", 15, 0.5);
+        sleep(1000);
+        leitura_x(2);
+        servo_garra("backdrop");
+        garra("cima", 85, 0.5);
+        walk("front", 15, 0.5);
+        servo_pixel("soltar");
+        walk("back", 20, 0.5);
+        walk("spinright", 1920, 0.5);
+        servo_porta("abrir");
+        walk("right", 75, 0.8);
+        walk("back", 35, 0.5);
+    }
+    public void direita() {
+        servo_porta("fechar");
+        servo_porta("abrir");
+        walk("front", 40, 0.5);
+        walk("spinright", 480, 0.5);
+        walk("front", 24, 0.5);
+        walk("back", 24, 0.5);
+        walk("spinleft", 1440, 0.5);
+        garra("baixo", 300, 0.5);
+        servo_porta("fechar");
+        walk("front", 80, 0.5);
+        walk("right", 45, 0.5);
+        walk("front", 15, 0.5);
+        sleep(1000);
+        leitura_x(3);
+        walk("front", 10, 0.5);
+        servo_garra("backdrop");
+        garra("cima", 70, 0.3);
+        servo_pixel("soltar");
+        walk("back", 20, 0.5);
+        walk("spinright", 1920, 0.5);
+        servo_porta("abrir");
+        walk("right", 95, 0.5);
+        walk("back", 35, 0.5);
+    }
     public void leitura_x(int x){
         while (sair >= 1) {
 
@@ -303,11 +256,12 @@ public class Autonomous_ULTRA_Poggers_Right_Blue extends LinearOpMode {
                     if (detection.id == x) {
                          if (detection.ftcPose.x <= -2.2) {
                             while (detection.ftcPose.x <= -2.2) {
-                                walk("left", 10, 0.3);
+                                walk("left", 8, 0.5);
                                 detections = aprilTag.getDetections();
                                 for (AprilTagDetection updatedDetection : detections) {
                                     if (updatedDetection.id == x) {
                                         detection = updatedDetection;
+                                        sleep(500);
                                         break;
                                     }
                                 }
@@ -315,11 +269,13 @@ public class Autonomous_ULTRA_Poggers_Right_Blue extends LinearOpMode {
 
                         }
                     } else {
-                        walk("left", 5, 0.5);
+                        walk("left", 6, 0.5);
+                        sleep(1000);
                     }
                 }
             } else {
-                walk("left", 5, 0.5);
+                walk("left", 6, 0.5);
+                sleep(1000);
             }
 
         }

@@ -23,16 +23,14 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
 
     private boolean rightTriggerPressed = false;
 
-    private boolean buttonR;
-
     private float lastStickValue;
 
     private String mode = "txt";
     private boolean pixel;
     private double startTime;
-    private double servoSpeed = 0.1;
     boolean portao_aberto = false;
     boolean aviao = false;
+    int exe = 1;
 
     @Override
     public void runOpMode() {
@@ -56,8 +54,6 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
         float X;
         float Z;
         float Y2;
-        float X2;
-        float Z2;
         boolean garra_lenta = true;
         double maxPower = 1;
         boolean rightTrigger2Pressed = false;
@@ -68,7 +64,14 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
             X = gamepad1.left_stick_x;
             Z = gamepad1.right_stick_x;
             Y2 = gamepad2.left_stick_y;
-            Z2 = gamepad2.right_stick_y;
+
+            while(exe == 1) {
+                exe = 0;
+                s5.setPosition(1);
+                portao_aberto = true;
+                sleep(450);
+                s5.setPosition(0.5);
+            }
 
             if (gamepad1.left_trigger > 0.1 && !leftTriggerPressed && maxPower > 0.0) {
                 maxPower = 0.5;
@@ -90,20 +93,10 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
             Y *= maxPower;
             Z *= maxPower;
 
-            if (buttonR) {
+            if (gamepad2.left_bumper) {
                 s0.setPosition(0.35);
-                if(gamepad2.right_stick_y > 0) {
-                    s0.setDirection(Servo.Direction.FORWARD);
-                    s0.setPosition(Z2);
-                    lastStickValue = Z2;
-                } else if(gamepad2.right_stick_y < 0) {
-                    s0.setDirection(Servo.Direction.REVERSE);
-                    s0.setPosition(-Z2);
-                    lastStickValue = -Z2;
-                } else if(gamepad2.x) {
-                    s0.setPosition(0.1);
-                    buttonR = false;
-                }
+            } else if(gamepad2.x) {
+                s0.setPosition(0.09);
             }
 
             if(gamepad2.y && pixel) {
@@ -133,14 +126,6 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
                 rightTrigger2Pressed = false;
             }
 
-            if (gamepad2.left_bumper && !buttonR) {
-                buttonR = true;
-                sleep(200);
-            } else if (gamepad2.left_bumper && buttonR) {
-                buttonR = false;
-                sleep(200);
-            }
-
             if (gamepad1.right_bumper && !portao_aberto) {
                 s5.setPosition(1);
                 portao_aberto = true;
@@ -152,10 +137,7 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
                 sleep(450);
                 s5.setPosition(0.5);
             } else if (gamepad1.y) {
-                s5.setPosition(1);
-                portao_aberto = true;
-                sleep(450);
-                s5.setPosition(0.5);
+                portao_aberto = false;
             }
 
             frontleft.setPower(-X);
@@ -190,7 +172,6 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
             telemetry.addData("Power: ", maxPower);
             telemetry.addData("Garra: ", garra_lenta);
             telemetry.addData("Mode: ", mode);
-            telemetry.addData("Servo: ", buttonR);
             telemetry.addData("pixel", pixel);
             telemetry.addData("portão: ", portao_aberto);
             telemetry.update();
