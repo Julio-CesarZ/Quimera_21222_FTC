@@ -81,7 +81,7 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
 
             // Ajusta o maxPower se o gatilho direito for pressionado e não estava pressionado anteriormente
             if (gamepad1.right_trigger > 0.1 && !rightTriggerPressed && maxPower < 1.0) {
-                maxPower = 1.0;
+                maxPower = 2;
                 mode = "Veloz! ";
             }
             rightTriggerPressed = gamepad1.right_trigger > 0.1;
@@ -170,7 +170,7 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
             }
 
             telemetry.addData("Power: ", maxPower);
-            telemetry.addData("Garra: ", garra_lenta);
+            telemetry.addData("Garra rápida? ", garra_lenta);
             telemetry.addData("Mode: ", mode);
             telemetry.addData("pixel", pixel);
             telemetry.addData("portão: ", portao_aberto);

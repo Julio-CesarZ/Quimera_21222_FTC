@@ -192,7 +192,7 @@ public class Autonomous_ULTRA_Poggers_Left_Blue extends LinearOpMode {
         walk("spinright",1960,0.5);
         garra("baixo", 300, 0.5);
         servo_porta("fechar");
-        walk("left", 90, 0.5);
+        walk("left", 84, 0.5);
         walk("front", 10, 0.5);
         sleep(1000);
         leitura_x(1);
@@ -219,7 +219,7 @@ public class Autonomous_ULTRA_Poggers_Left_Blue extends LinearOpMode {
         walk("spinright",2000,0.5);
         garra("baixo", 300, 0.5);
         servo_porta("fechar");
-        walk("left", 85, 0.8);
+        walk("left", 73, 0.8);
         walk("front", 15, 1);
         sleep(1000);
         leitura_x(2);
@@ -248,7 +248,7 @@ public class Autonomous_ULTRA_Poggers_Left_Blue extends LinearOpMode {
         walk("spinright",1960,0.5);
         garra("baixo", 300, 0.5);
         servo_porta("fechar");
-        walk("left", 70, 0.5);
+        walk("left", 63, 0.5);
         walk("front", 10, 0.5);
         sleep(1000);
         leitura_x(1);
