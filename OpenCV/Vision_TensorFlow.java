@@ -16,9 +16,9 @@ public class Vision_TensorFlow extends LinearOpMode {
 
     private static final boolean USE_WEBCAM = true;  // true for webcam, false for phone camera
 
-    private static final String TFOD_MODEL_ASSET = "CenterStage.tflite";
+    private static final String TFOD_MODEL_ASSET = "Treinamento_AV.tflite";
 
-    private static final String TFOD_MODEL_FILE = "/sdcard/FIRST/tflitemodels/CenterStage.tflite";
+    private static final String TFOD_MODEL_FILE = "/sdcard/FIRST/tflitemodels/Treinamento_AV.tflite";
     private static final String[] LABELS = {
             "Pixel",
     };

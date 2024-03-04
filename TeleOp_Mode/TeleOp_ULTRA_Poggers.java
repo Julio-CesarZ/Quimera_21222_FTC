@@ -96,7 +96,7 @@ public class TeleOp_ULTRA_Poggers extends LinearOpMode {
             if (gamepad2.left_bumper) {
                 s0.setPosition(0.35);
             } else if(gamepad2.x) {
-                s0.setPosition(0.09);
+                s0.setPosition(0.06);
             }
 
             if(gamepad2.y && pixel) {

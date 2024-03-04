@@ -42,7 +42,8 @@ public class Autonomous_ULTRA_Poggers_Right_Red extends LinearOpMode {
 
     private static final String TFOD_MODEL_FILE = "/sdcard/FIRST/tflitemodels/CenterStage.tflite";
     private static final String[] LABELS = {
-            "ObjetoV",
+            "A",
+            "V",
     };
 
     private AprilTagProcessor aprilTag;
@@ -179,72 +180,70 @@ public class Autonomous_ULTRA_Poggers_Right_Red extends LinearOpMode {
     public void esquerda() {
         servo_porta("fechar");
         servo_porta("abrir");
-        walk("front", 40, 0.5);
+        walk("front", 44, 0.8);
         walk("spinleft", 480, 0.5);
-        walk("front", 25, 0.5);
+        walk("front", 27, 0.8);
         servo_porta("abrir");
-        walk("back", 25, 0.5);
+        walk("back", 25, 0.8);
         walk("spinright", 1440, 0.5);
-        walk("left", 36, 0.5);
+        walk("left", 36, 0.8);
         garra("baixo", 400, 0.5);
         servo_porta("fechar");
         walk("front", 80, 0.5);
-        walk("left", 8, 0.5);
+        walk("left", 6, 0.5);
         sleep(1000);
         leitura_x(4);
         walk("front", 15, 0.5);
         servo_garra("backdrop");
         garra("cima", 70, 0.3);
-        walk("front", 2, 0.1);
         servo_pixel("soltar");
         walk("back", 10, 0.5);
+        //walk("right", 120, 0.7);
         walk("spinright", 2000, 0.5);
-        walk("left", 85, 0.7);
-        walk("back", 40, 0.3);
+        walk("back", 8, 0.3);
         servo_porta("abrir");
+        //walk("front", 10, 0.5);
     }
     public void meio() {
         servo_porta("fechar");
         servo_porta("abrir");
-        walk("front", 70, 0.5);
-        walk("back", 15, 0.5);
+        walk("front", 74, 0.8);
+        walk("back", 15, 0.8);
         walk("spinright", 960, 0.5);
         garra("baixo", 300, 0.5);
         servo_porta("fechar");
-        walk("front", 80, 0.5);
-        walk("front", 3, 0.1);
+        walk("front", 80, 0.8);
+        walk("right", 3, 0.5);
         sleep(1000);
         leitura_x(5);
         walk("front", 10, 0.5);
         servo_garra("backdrop");
-        garra("cima", 80, 0.3);
-        walk("front", 2, 0.1);
-        walk("left", 5, 0.5);
+        garra("cima", 70, 0.3);
+        walk("front", 10, 0.3);
         servo_pixel("soltar");
-        garra("cima", 100, 0.3);
-        garra("baixo", 70, 0.7);
         walk("back", 2, 0.1);
         garra("baixo", 20, 0.2);
         walk("back", 10, 1);
+        //walk("right", 100, 0.7);
+        //walk("front", 10, 0.5);
         walk("spinright", 2000, 0.5);
-        walk("left", 65, 0.7);
-        walk("back", 40, 0.3);
+        walk("back", 8, 0.3);
         servo_porta("abrir");
     }
     public void direita() {
         servo_porta("fechar");
         servo_porta("abrir");
-        walk("front", 40, 0.5);
+        walk("front", 44, 0.8);
         walk("spinright", 480, 0.5);
-        walk("front", 19, 0.5);
+        walk("front", 19, 0.8);
         servo_porta("abrir");
-        walk("back", 22, 0.5);
+        walk("back", 22, 0.8);
         walk("spinright", 480, 0.5);
-        walk("right", 18, 0.5);
+        walk("right", 18, 0.8);
         garra("baixo", 300, 0.5);
         servo_porta("fechar");
         walk("front", 60, 0.5);
-        walk("left", 15, 0.5);
+        walk("left", 12, 0.5);
         walk("front", 25, 0.5);
         sleep(1000);
         leitura_x(6);
@@ -253,9 +252,10 @@ public class Autonomous_ULTRA_Poggers_Right_Red extends LinearOpMode {
         garra("cima", 70, 0.3);
         servo_pixel("soltar");
         walk("back", 12, 0.5);
+        //walk("right", 80, 0.7);
+        //walk("front", 10, 0.5);
         walk("spinright", 2000, 0.5);
-        walk("left", 62, 0.7);
-        walk("back", 30, 0.3);
+        walk("back", 10, 0.3);
         servo_porta("abrir");
 
     }
@@ -285,12 +285,12 @@ public class Autonomous_ULTRA_Poggers_Right_Red extends LinearOpMode {
 
                         }
                     } else {
-                        walk("left", 5, 0.5);
+                        walk("left", 6, 0.5);
                         sleep(500);
                     }
                 }
             } else {
-                walk("left", 5, 0.5);
+                walk("left", 6, 0.5);
                 sleep(500);
             }
 
@@ -331,6 +331,7 @@ public class Autonomous_ULTRA_Poggers_Right_Red extends LinearOpMode {
                     .addProcessors(tfod, aprilTag)
                     .build();
         }
+        //tfod.setMinResultConfidence(0.82f);
     }
 
     private void telemetryAprilTag() {

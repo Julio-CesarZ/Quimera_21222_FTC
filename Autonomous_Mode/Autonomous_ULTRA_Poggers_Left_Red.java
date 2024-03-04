@@ -37,14 +37,15 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
     private boolean april4 = false;
     private boolean april5 = false;
     private boolean april6 = false;
-    int sair = 3;
+    int sair = 4;
     private static final boolean USE_WEBCAM = true;
 
     private static final String TFOD_MODEL_ASSET = "CenterStage.tflite";
 
     private static final String TFOD_MODEL_FILE = "/sdcard/FIRST/tflitemodels/CenterStage.tflite";
     private static final String[] LABELS = {
-            "ObjetoV",
+            "A",
+            "V",
     };
 
     private AprilTagProcessor aprilTag;
@@ -178,7 +179,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
     public void esquerda() {
         servo_porta("fechar");
         servo_porta("abrir");
-        walk("front", 43, 0.5);
+        walk("front", 45, 0.5);
         walk("spinleft",520,0.5);
         walk("front", 20, 0.5);
         walk("back", 18, 0.5);
@@ -186,11 +187,11 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
         s0.setPosition(0.35);
         walk("front", 85, 1);
         walk("spinleft",1020,1);
-        walk("back", 192, 1);
+        walk("back", 190, 1);
         walk("spinright",1950,0.5);
         garra("baixo", 400, 0.3);
         servo_porta("fechar");
-        walk("right", 60, 0.5);
+        walk("right", 58, 0.5);
         walk("front", 15, 0.6);
         sleep(1000);
         leitura_x(4);
@@ -207,7 +208,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
     public void meio() {
         servo_porta("fechar");
         servo_porta("abrir");
-        walk("front", 70, 0.5);
+        walk("front", 72, 0.5);
         walk("back", 20, 0.5);
         walk("left", 50, 0.5);
         s0.setPosition(0.35);
@@ -217,7 +218,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
         walk("spinright",2020,0.5);
         garra("baixo", 400, 0.5);
         servo_porta("fechar");
-        walk("right", 98, 0.5);
+        walk("right", 95, 0.5);
         walk("front", 15, 1);
         servo_garra("backdrop");
         walk("front", 40, 0.5);
@@ -231,7 +232,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
     public void direita() {
         servo_porta("fechar");
         servo_porta("abrir");
-        walk("front", 40, 0.5);
+        walk("front", 44, 0.5);
         walk("spinright",480,0.5);
         walk("front", 25, 0.5);
         walk("back", 23, 0.5);
@@ -243,7 +244,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
         walk("spinright",1920,0.5);
         garra("baixo", 400, 0.3);
         servo_porta("fechar");
-        walk("right", 102, 0.5);
+        walk("right", 100, 0.5);
         walk("front", 15, 1);
         sleep(1000);
         leitura_x(6);
@@ -282,12 +283,12 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
 
                         }
                     } else {
-                        walk("left", 8, 0.5);
+                        walk("left", 10, 0.5);
                         sleep(1000);
                     }
                 }
             } else {
-                walk("left", 8, 0.5);
+                walk("left", 10, 0.5);
                 sleep(1000);
             }
 
@@ -327,6 +328,7 @@ public class Autonomous_ULTRA_Poggers_Left_Red extends LinearOpMode {
                     .addProcessors(tfod, aprilTag)
                     .build();
         }
+        //tfod.setMinResultConfidence(0.82f);
     }
 
     private void telemetryAprilTag() {
